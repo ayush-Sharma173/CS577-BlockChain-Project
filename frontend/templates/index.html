@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Donation DApp</title>
+    <link rel="stylesheet" type="text/css"href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/card.css">
+    <link rel="stylesheet" type="text/css" href="assets/modal.css">
+    <link rel="stylesheet" type="text/css" href="assets/component_style.css">
+    <script type="module">
+  import { connectMetaMask, createRequest, donate, fetchCompletedRequests, donateWidget } from '/assets/app.js';
+</script>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" />
+            <h1>Charity and Donation</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="/request">Make Request</a>
+            </li>
+            <li>
+                <a href="/landing">Landing</a>
+            </li>
+            <li>
+                <a href="/donate">Donate</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </nav>
+    <div class="menubar">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="./raise_request.html">Make Request</a>
+            </li>
+            <li class="donate-btn" style="background-color: red;">
+                <a href="./raise_donate.html">Donate</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container home">
+        <section class="how-it-works">
+            <h2>We work in the hardest-to-reach places, where it’s toughest to be a child.</h2>
+            <p>When you give to Save the Children, <span>85% of every donation</span> goes straight to our mission to provide lifesaving relief to children.</p>
+            <ul>
+                <li>₹5000 can provide enough food to keep 3 children from going hungry for a month</li>
+                <li>₹8000 can wrap 30 warm, cozy blankets around children affected by conflict</li>
+                <li>₹10000 can provide 150 face masks to refugee health workers on the front lines</li>
+            </ul>
+            <p>With your support, we can continue our work to keep children in the <span>India and around the world</span> healthy, educated and safe.</p>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.umd.min.js"></script>
+    <!-- <script src="component_script.js"></script> -->
+</body>
+
+</html>

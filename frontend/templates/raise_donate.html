@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Donation DApp</title>
+    <link rel="stylesheet" type="text/css"href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/card.css">
+    <link rel="stylesheet" type="text/css" href="assets/modal.css">
+    <link rel="stylesheet" type="text/css" href="assets/component_style.css">
+    <script type="module">
+  import { connectMetaMask, createRequest, donate, fetchCompletedRequests, donateWidget } from '/assets/app.js';
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.umd.min.js"></script>
+</head>
+
+<body onload="fetchCompletedRequests()">
+    <nav>
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" />
+            <h1>Charity and Donation</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="./index.html">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="./raise_request.html">Make Request</a>
+            </li>
+            <li class="donate-btn">
+                <a href="#">Donate</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </nav>
+    <div class="menubar">
+        <ul>
+            <li>
+                <a href="./index.html">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="./raise_request.html">Make Request</a>
+            </li>
+            <li>
+                <a href="#">Donate</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="section" id="addContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const oneRupeeEqualsToEthereum = 0.000012;  // For simulation purposes
+
+        // Mock contract data to simulate Ethereum interaction
+        const mockRequests = [
+            {
+                name: "Chiranjibi's Hedge Fund",
+                description: "A charity to support the underprivileged in the community.",
+                contact: "0x5fF2439D5a0D42F9D12b7C1d5aF287A13b0C",
+                amount: 1000, // in Ethereum
+                received: 300, // in Ethereum
+                destAddress: "0xB28Db76483f6e0F4E87646a0564095f9cB68e460",
+                complete: false
+            },
+            {
+                name: "Sahil's Japan VISA Fund",
+                description: "Need some help here.",
+                contact: "0x12AcAF13D56f0B40DBA47fCB0A221ea1c7ee38BC",
+                amount: 2000,
+                received: 500,
+                destAddress: "0x4F20d77D875fB1E6c8C964ec268527621Fa5d3A5",
+                complete: false
+            }
+        ];
+
+        // Function to simulate fetching completed requests
+        async function fetchCompletedRequests() {
+            // Use mock data instead of Ethereum contract interaction
+            const totalRequests = mockRequests.length;
+            let requestList = document.getElementById('main');
+
+            // Clear the table before populating it
+            requestList.innerHTML = '';
+
+            console.log(totalRequests);
+            let found = false;
+
+            for (let i = 0; i < totalRequests; i++) {
+                const request = mockRequests[i];
+                const name = request.name;
+                const description = request.description;
+                const contact = request.contact;
+                const amount = request.amount * oneRupeeEqualsToEthereum;
+                const received = request.received * oneRupeeEqualsToEthereum;
+                const destAddress = request.destAddress;
+                const complete = request.complete;
+
+                // Check if the request is completed
+                if (!complete) {
+                    found = true;
+                    requestList.innerHTML += `<div class="donate-card">
+                                                <div class="image-container">
+                                                    <img src="./assets/donate.png" alt="Morning Set">
+                                                </div>
+                                                <div class="donate-info">
+                                                    <h3>${name}</h3>
+                                                    <p>${description}</p>
+                                                    <div class="tags">
+                                                        <span class="tag">Contact : ${contact}</span>
+                                                        <span class="tag">Donated : ${received} ETH</span>
+                                                    </div>
+                                                    <div class="donate-order">
+                                                        <span class="price">$${amount}&nbsp;</span>
+                                                        <button class="donate-button" onclick="donateWidget('${i}', '${name}', '${destAddress}')">Donate Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                }
+            }
+
+            if (!found) {
+                requestList.innerHTML += `<div class="donate-card">
+                                            <div class="image-container">No Charity request found</div>
+                                          </div>`;
+                return;
+            }
+        }
+
+        // Simulating the donateWidget function
+        function donateWidget(requestId, name, destAddress) {
+            alert(`You are about to donate to "${name}" at address: ${destAddress}`);
+        }
+    </script>
+</body>
+</body>
+
+</html>

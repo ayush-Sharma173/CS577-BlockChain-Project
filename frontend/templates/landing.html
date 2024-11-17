@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css"href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/card.css">
+    <link rel="stylesheet" type="text/css" href="assets/modal.css">
+    <link rel="stylesheet" type="text/css" href="assets/component_style.css">
+    <script type="module" src="/assets/app.js"></script>
+    <title>Charity and Donations</title>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <nav id="navbar">
+            <h1>Charity & Donations</h1>
+            <ul>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li class="donate-btn"><a href="#donate">Donate</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Charity & Donations</h1>
+            <h2>Empowering Charitable Giving with Blockchain Transparency</h2>
+            <p>Track your donations, ensure transparency, and make an impact where it truly matters.</p>
+            <a href="#donate" class="cta-button">Donate Now</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Our Platform</h2>
+        <p>We use blockchain technology to create a decentralized, transparent, and trustless environment for charitable donations. By leveraging Ethereum smart contracts, we guarantee that your donations are securely handled and verifiably tracked.</p>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2>How it Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <h3>Step 1: Choose a Campaign</h3>
+                <p>Select a verified charity campaign from our list of causes.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2: Make a Donation</h3>
+                <p>Donate securely using Ethereum through our platform, directly from your wallet.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3: Track Donations</h3>
+                <p>View the progress of your donation in real-time, ensuring your contribution is utilized correctly.</p>
+            </div>
+            <div class="step">
+                <h3>Step 4: Smart Contract Disbursal</h3>
+                <p>Once the donation target is met, smart contracts automatically release funds to the charity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action: Donate -->
+    <section id="donate" class="donate-section">
+        <h2>Ready to Make a Difference?</h2>
+        <p>Your contributions will go directly to the causes you care about, with complete transparency.</p>
+        <a href="#" class="cta-button">Start Donating</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Charity & Donations | Built on Ethereum Blockchain</p>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+
+</body>
+</html>

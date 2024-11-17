@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../assets/bg.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+input, button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #c750ff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#main {
+    margin: 25px;
+    padding: 25px;
+}
+
+.how-it-works ol {
+    padding-left: 20px;  /* Indent the ordered list */
+}
+
+.how-it-works li {
+    margin: 10px 0;  /* Space between list items */
+    font-size: 1.1em;  /* Slightly larger font size for list items */
+    color: #555;  /* Medium gray color for text */
+}
+
+.featured-charities {
+    margin-top: 30px;  /* Additional space above featured charities */
+}
+
+.charity {
+    background-color: #f9f9f9;  /* Light gray background for each charity box */
+    padding: 15px;  /* Padding inside the charity box */
+    margin: 10px 0;  /* Space between charity boxes */
+    border-radius: 5px;  /* Rounded corners for charity boxes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+.charity h3 {
+    margin: 0;  /* Remove default margin from h3 */
+    color: #c750ff;  /* Purple color for charity names */
+}
+
+.charity p {
+    color: #666;  /* Lighter gray color for charity descriptions */
+    font-size: 0.9em;  /* Slightly smaller font size for descriptions */
+}
+
+.home {
+    width: 100%;
+    text-align: justify;
+}
+.home h2 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home span {
+    color: red;
+}
